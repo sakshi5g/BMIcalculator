@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+	body{
+		background-color: gray;
+	}
+</style>
+</head>
+<body >
+
+
+<div class="container">
+	<div class="card">
+  <div class="card-header text-center bg-success text-white ">BMI CALCULATOR</div>
+  <div class="card-body">
+  	<form class=" w-50 m-auto" onsubmit="return false">
+  		<div>
+  			<label>Weight</label>
+  			<input type="text" name="" class="form-control" required id="weight" placeholder="weight in kg" >
+  		</div>
+  		<div>
+  			<label>Height</label>
+  			<input type="text" name="" class="form-control" required id="height" placeholder="height in ft " >
+  		</div><br>
+  		<div class="text-center"><button class="btn btn-success w-50" onclick="checkbmi()">check BMI</button></div>
+  		<div>
+  			<label>BMI value</label>
+  			<input type="text" name="" class="form-control" id="bmival" >
+  		</div>
+  	</form>
+  </div> 
+  <div class="card-footer text-center">A healthy BMI ranges between 19 to 25r</div>
+</div>
+</div>
+<script type="text/javascript">
+	function checkbmi() {
+	  var weight=document.getElementById('weight').value;
+	  var height=document.getElementById('height').value;
+	  height=height * 12; //in inch
+	  height=height* 0.025;//in meter
+	  var newbmival= weight/(height*height);
+	  newbmival=  Math.round(newbmival);
+	  document.getElementById('bmival').value=newbmival;
+	}
+	
+</script>
+</body>
+</html>
